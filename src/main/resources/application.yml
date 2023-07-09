@@ -1,0 +1,14 @@
+server:
+  servlet:
+    encoding:
+      force-response: true
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+github:
+  api:
+    url: https://api.github.com
