@@ -7,15 +7,16 @@
 
     <script>
         function getCookie(name) {
-            var dc = document.cookie;
-            var prefix = name + "=";
-            var begin = dc.indexOf("; " + prefix);
+            let end;
+            const dc = document.cookie;
+            const prefix = name + "=";
+            let begin = dc.indexOf("; " + prefix);
             if (begin == -1) {
                 begin = dc.indexOf(prefix);
                 if (begin != 0) return null;
             } else {
                 begin += 2;
-                var end = document.cookie.indexOf(";", begin);
+                end = document.cookie.indexOf(";", begin);
                 if (end == -1) {
                     end = dc.length;
                 }
@@ -49,23 +50,20 @@
             document.cookie = updatedCookie;
         }
 
-        const myGithubToken = getCookie("githubToken");
-        if (myGithubToken == null) {
-            const response = await fetch("/.auth/me")
-                    .then(function (response) {
-                        return response.json();
-                    }).then(function (body) {
-                        return body;
-                    });
-
-            if (response.status === 200) {
-                setCookie('githubToken', response[0].access_token, {secure: true});
-            } else {
-                document.cookie = 'COOKIE_NAME=; Max-Age=0; path=/; domain=' + location.host;
-            }
-        } else {
-            window.location.href = "/login";
+        function setGithubToken() {
+            fetch('/.auth/me', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+            })
+                    .then(response => response.json())
+                    .then(response => {
+                        setCookie('githubToken', response[0].access_token, {secure: true})
+                    })
         }
+
+        setGithubToken();
     </script>
 </head>
 <body>
