@@ -59,7 +59,12 @@
             })
                     .then(response => response.json())
                     .then(response => {
+                        const oldGithubToken = getCookie('githubToken')
                         setCookie('githubToken', response[0].access_token, {secure: true})
+
+                        if (oldGithubToken !== getCookie('githubToken')) {
+                            window.location.href = "/";
+                        }
                     })
         }
 
