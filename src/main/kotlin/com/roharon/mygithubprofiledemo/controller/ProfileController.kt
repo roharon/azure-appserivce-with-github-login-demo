@@ -23,6 +23,7 @@ class ProfileController(private val githubService: GithubService) {
         model["githubProfileImageUrl"] = user.avatarUrl
         model["bio"] = user.bio ?: ""
         model["email"] = user.email ?: ""
+        model["blog"] = user.blog ?: ""
 
         return "profile"
     }
