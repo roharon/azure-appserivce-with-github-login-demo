@@ -1,7 +1,7 @@
-package com.roharon.mygithubprofiledemo.profile.controller
+package com.roharon.mygithubprofiledemo.controller
 
-import com.roharon.mygithubprofiledemo.client.GithubUserResponse
-import com.roharon.mygithubprofiledemo.profile.service.GithubService
+import com.roharon.mygithubprofiledemo.datasource.model.GithubUserResponse
+import com.roharon.mygithubprofiledemo.service.GithubService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set

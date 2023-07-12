@@ -1,4 +1,4 @@
-package com.roharon.mygithubprofiledemo.client
+package com.roharon.mygithubprofiledemo.datasource.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

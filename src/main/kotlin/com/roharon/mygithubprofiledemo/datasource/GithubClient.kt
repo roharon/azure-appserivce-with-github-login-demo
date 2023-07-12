@@ -1,5 +1,6 @@
-package com.roharon.mygithubprofiledemo.client
+package com.roharon.mygithubprofiledemo.datasource
 
+import com.roharon.mygithubprofiledemo.datasource.model.GithubUserResponse
 import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.service.annotation.GetExchange
 

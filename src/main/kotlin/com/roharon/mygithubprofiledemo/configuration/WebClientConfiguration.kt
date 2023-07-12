@@ -1,6 +1,6 @@
-package com.roharon.mygithubprofiledemo.config
+package com.roharon.mygithubprofiledemo.configuration
 
-import com.roharon.mygithubprofiledemo.client.GithubClient
+import com.roharon.mygithubprofiledemo.datasource.GithubClient
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -10,7 +10,7 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory
 import org.springframework.web.service.invoker.createClient
 
 @Configuration
-class WebClientConfig {
+class WebClientConfiguration {
 
     @Bean
     fun webClient(): WebClient {
