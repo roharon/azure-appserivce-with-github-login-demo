@@ -24,6 +24,7 @@ class ProfileController(private val githubService: GithubService) {
         model["bio"] = user.bio ?: ""
         model["email"] = user.email ?: ""
         model["blog"] = user.blog ?: ""
+        model["location"] = user.location ?: ""
 
         return "profile"
     }
